@@ -58,6 +58,19 @@
         </h1>
     </header>
     <main>
+        <div>
+            <ul>
+                <?php
+                    for ($i = 0; $i < $hotels[$i]; $i++) {
+                ?>
+                    <li>
+                        <?php var_dump($hotels[$i]);?>
+                    </li>
+                <?php
+                    }
+                ?>
+            </ul>    
+        </div>
     </main>
     
     <!--link js-->
