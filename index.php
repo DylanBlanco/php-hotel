@@ -38,21 +38,12 @@
 
     ];
 
-    // function park() {
-    //     for ($i = 0; $i < $hotels[$i]; $i++) {
-    //         if (var_dump($hotels[$i]['parking']) == true) {
-    //             echo "Presente";
-    //         }
-    //         else {
-    //             echo "Non Presente";
-    //         }
-    //     }
-    // }
     function parking() {
-        if ($hotels[$i]['parking'] == true) {
+        $parking = $hotels[$i]['parking'];
+        if ($parking == true) {
             echo "Presente";
         }
-        elseif ($hotels[$i]['parking'] == false) {
+        elseif ($parking == false) {
             echo "Non Presente";
         }
     }
