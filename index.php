@@ -1,6 +1,5 @@
 <?php
     $hotels = [
-
         [
             'name' => 'Hotel Belvedere',
             'description' => 'Hotel Belvedere Descrizione',
@@ -38,7 +37,26 @@
         ],
 
     ];
-?>
+
+    // function park() {
+    //     for ($i = 0; $i < $hotels[$i]; $i++) {
+    //         if (var_dump($hotels[$i]['parking']) == true) {
+    //             echo "Presente";
+    //         }
+    //         else {
+    //             echo "Non Presente";
+    //         }
+    //     }
+    // }
+    function parking() {
+        if ($hotels[$i]['parking'] == true) {
+            echo "Presente";
+        }
+        elseif ($hotels[$i]['parking'] == false) {
+            echo "Non Presente";
+        }
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +65,12 @@
 
     <!--link css-->
     <link rel="stylesheet" href="css/style.css">
-
+    
+    <!-- link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- link BootStrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <title>PHP Hotel</title>
 </head>
@@ -62,6 +83,7 @@
         </div>
     </header>
     <main>
+        <!-- lista dati array -->
         <div class="container">
             <ul>
                 <?php
@@ -75,7 +97,9 @@
                 ?>
             </ul>    
         </div>
-        <div class="container">
+
+        <!-- tabella dati array -->
+        <div class="container p-3">
             <div class="row justify-content-center">
                 <div class="col-2 p-2 text-center border">
                     <h5>
@@ -84,22 +108,22 @@
                 </div>
                 <div class="col-2 p-2 text-center border">
                     <h5>
-                        description
+                        Description
                     </h5>
                 </div>
                 <div class="col-2 p-2 text-center border">
                     <h5>
-                        parking
+                        Parking
                     </h5>
                 </div>
                 <div class="col-2 p-2 text-center border">
                     <h5>
-                        vote
+                        Vote
                     </h5>
                 </div>
                 <div class="col-2 p-2 text-center border">
                     <h5>
-                        distance to center
+                        Distance to center
                     </h5>
                 </div>
             </div>
@@ -113,16 +137,28 @@
                         </b>
                     </div>
                     <div class="col-2 p-2 text-center border">
-                        <?php echo($hotels[$i]['description']);?>
+                        <p>
+                            <?php echo($hotels[$i]['description']);?>
+                        </p>
                     </div>
                     <div class="col-2 p-2 text-center border">
-                        <?php echo($hotels[$i]['parking']);?>
+                        <p>
+                            <?php echo(parking());?>
+                        </p>
                     </div>
                     <div class="col-2 p-2 text-center border">
-                        <?php echo($hotels[$i]['vote']);?>
+                        <p>
+                            <?php echo($hotels[$i]['vote']);?>
+                            <i class="fa-regular fa-star text-warning"></i>
+                            <i class="fa-regular fa-star text-warning"></i>
+                            <i class="fa-regular fa-star text-warning"></i>
+                        </p>
                     </div>
                     <div class="col-2 p-2 text-center border">
-                        <?php echo($hotels[$i]['distance_to_center']);?>
+                        <p>
+                            <?php echo($hotels[$i]['distance_to_center']);?>
+                            Km
+                        </p>
                     </div>
                 </div>
             <?php
