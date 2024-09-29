@@ -1,5 +1,4 @@
 <?php
-
     $hotels = [
 
         [
@@ -48,17 +47,22 @@
 
     <!--link css-->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- link BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <title>PHP Hotel</title>
 </head>
 <body>
     <header>
-        <h1>
-            PHP Hotel
-        </h1>
+        <div class="container text-center">
+            <h1>
+                PHP Hotel
+            </h1>
+        </div>
     </header>
     <main>
-        <div>
+        <div class="container">
             <ul>
                 <?php
                     for ($i = 0; $i < $hotels[$i]; $i++) {
@@ -70,6 +74,60 @@
                     }
                 ?>
             </ul>    
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-2 p-2 text-center border">
+                    <h5>
+                        Name
+                    </h5>
+                </div>
+                <div class="col-2 p-2 text-center border">
+                    <h5>
+                        description
+                    </h5>
+                </div>
+                <div class="col-2 p-2 text-center border">
+                    <h5>
+                        parking
+                    </h5>
+                </div>
+                <div class="col-2 p-2 text-center border">
+                    <h5>
+                        vote
+                    </h5>
+                </div>
+                <div class="col-2 p-2 text-center border">
+                    <h5>
+                        distance to center
+                    </h5>
+                </div>
+            </div>
+            <?php
+                for ($i = 0; $i < $hotels[$i]; $i++) {
+            ?>
+                <div class="row justify-content-center">
+                    <div class="col-2 p-2 text-center border">
+                        <b>
+                            <?php echo($hotels[$i]['name']);?>
+                        </b>
+                    </div>
+                    <div class="col-2 p-2 text-center border">
+                        <?php echo($hotels[$i]['description']);?>
+                    </div>
+                    <div class="col-2 p-2 text-center border">
+                        <?php echo($hotels[$i]['parking']);?>
+                    </div>
+                    <div class="col-2 p-2 text-center border">
+                        <?php echo($hotels[$i]['vote']);?>
+                    </div>
+                    <div class="col-2 p-2 text-center border">
+                        <?php echo($hotels[$i]['distance_to_center']);?>
+                    </div>
+                </div>
+            <?php
+                }
+            ?>
         </div>
     </main>
     
