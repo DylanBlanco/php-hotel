@@ -38,15 +38,15 @@
 
     ];
 
-    function parking() {
-        $parking = $hotels[$i]['parking'];
-        if ($parking == true) {
-            echo "Presente";
-        }
-        elseif ($parking == false) {
-            echo "Non Presente";
-        }
-    }
+    // function parking() {
+    //     $parking = $hotels[$i]['parking'];
+    //     if ($parking == true) {
+    //         echo 'Presente';
+    //     }
+    //     elseif ($parking == false) {
+    //         echo 'Non Presente';
+    //     }
+    // }
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,27 +119,35 @@
                 </div>
             </div>
             <?php
-                for ($i = 0; $i < $hotels[$i]; $i++) {
+                foreach ($hotels as $hotel) {
             ?>
                 <div class="row justify-content-center">
                     <div class="col-2 p-2 text-center border">
                         <b>
-                            <?php echo($hotels[$i]['name']);?>
+                            <?php echo($hotel['name']);?>
                         </b>
                     </div>
                     <div class="col-2 p-2 text-center border">
                         <p>
-                            <?php echo($hotels[$i]['description']);?>
+                            <?php echo($hotel['description']);?>
                         </p>
                     </div>
                     <div class="col-2 p-2 text-center border">
                         <p>
-                            <?php echo(parking());?>
+                            <?php
+                                // echo ($hotels[$i]['parking'] ? 'Si' : 'No');
+                                if ($hotels[$i]['parking'] == true) {
+                                    echo 'Presente';
+                                }
+                                else {
+                                    echo 'Non Presente';
+                                }
+                            ?>
                         </p>
                     </div>
                     <div class="col-2 p-2 text-center border">
                         <p>
-                            <?php echo($hotels[$i]['vote']);?>
+                            <?php echo($hotel['vote']);?>
                             <i class="fa-regular fa-star text-warning"></i>
                             <i class="fa-regular fa-star text-warning"></i>
                             <i class="fa-regular fa-star text-warning"></i>
@@ -147,7 +155,7 @@
                     </div>
                     <div class="col-2 p-2 text-center border">
                         <p>
-                            <?php echo($hotels[$i]['distance_to_center']);?>
+                            <?php echo($hotel['distance_to_center']);?>
                             Km
                         </p>
                     </div>
